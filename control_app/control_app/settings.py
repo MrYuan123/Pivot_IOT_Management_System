@@ -156,5 +156,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'mail.bupt.edu.cn'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'mryuan@bupt.edu.cn'
-EMAIL_HOST_PASSWORD = 'yyk9174110'
+EMAIL_HOST_PASSWORD = '****' # set your password
 DEFAULT_FROM_EMAIL = 'System<mryuan@bupt.edu.cn>'

@@ -59,12 +59,16 @@ def gettable(request):
    if request.method == 'GET':
        if 'username' in request.session:
            username = request.session['username']
-           user = User.objects.filter(username=username)
+           # user = User.objects.filter(username=username)
+           # machinelist = Machine.objects.filter(user=user)
+           user=User.objects.get(username=username)
            machinelist = Machine.objects.filter(user=user)
-           return render(request, 'table.html', locals())
+           return render(request,'table.html',{'machinelist':machinelist,'username':username})
+           # return render(request, 'table.html', locals())
        else:
            return render(request, 'login.html')
    elif request.method == 'POST':
+       print("this is a post")
        username = request.session['username']
        user = User.objects.filter(username=username)
        machinelist = Machine.objects.filter(SN=request.POST['machinesn'])
